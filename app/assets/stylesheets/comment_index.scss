@@ -1,0 +1,118 @@
+// Place all the styles related to the gifts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* CSSのリセット（消さない） */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'いろはマル', 'Hiragino Kaku Gothic ProN W3', sans-serif;
+  background: #F5F5F5;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+.main-container {
+  height: 100vh;
+  margin: 0 200px;
+  padding-top: 295px; 
+  background: white;
+  text-align: center;
+}
+
+.main-container p {
+  font-size: 24px;
+}
+
+// ----header--------
+
+.header-container {
+  height: 65px;
+  min-width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: gray;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.header-right {
+  padding-right: 80px;
+}
+
+.logo {
+  padding-left: 30px;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+// -------footer----------
+
+.footer-container {
+  height: 150px;
+  width: 100%;
+  background: pink;
+  // position: absolute;
+  // bottom: 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}
+
+.menu-list-container ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 180px;
+  font-size: 25px;
+}
