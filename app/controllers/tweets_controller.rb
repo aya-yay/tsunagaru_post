@@ -9,16 +9,11 @@ class TweetsController < ApplicationController
 
 
   def create
-    # binding.pry
-    @tweet = Tweet.find_or_initialize_by(text: tweet_params[:text])
-    if @tweet.new_record?
-      @tweet = Tweet.new(tweet_params)
-      @tweet.valid?
-      @tweet.save
-      redirect_to action: :index
-    else
-      @tweet.update(tweet_params)
-    end
+  # binding.pry
+    @tweet = Tweet.new(tweet_params)
+    @tweet.valid?
+    @tweet.save
+    redirect_to action: :index
   end
 
   def destroy
