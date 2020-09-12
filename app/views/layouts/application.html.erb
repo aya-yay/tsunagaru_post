@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TsunagaruPost</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="header-container">
+        
+        <div class="header-left">
+          <%= link_to "つながるぽすと", root_path, class: "logo" %>
+        </div>
+
+        <div class="header-right">
+          <ul class='lists-right'>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to current_user.nickname, "#", class: "user-nickname" %>
+              </li>
+              <li>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+              </li>
+              <li>
+                <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+      </div>
+    </header>
+
+
+
+
+
+
+
+    <%= yield %>
+
+      <footer>
+      <div class="footer-container">
+        <div class="menu-list-container">
+          <ul class="doors">
+            <li class="door01">
+              <%= link_to "ノックをする", koes_path %>
+            </li>
+            <li class="door02">
+              <a href="#">たからばこ</a>
+            </li>
+            <li class="door03">
+              <a href="#">ろくおん部屋</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+  </body>
+</html>
