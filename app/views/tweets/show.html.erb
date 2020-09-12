@@ -1,0 +1,75 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'show' %>
+<% end %>
+
+<div class="container">
+  <div class="show">
+
+    <div class="nav">
+      <div class="gift-container">
+        <% if current_user %>
+          <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+          <%= form.text_area :text, placeholder: "ことばをかける？", rows: "10", class: "kotobawokakeru"%>
+          <%= form.submit "おくる", class:"okuru" %> 
+          <br>
+          <br>
+
+          <label class="form-image">
+            <span class="image-file"><i class="far fa-image picture"></i></span>
+              <%= form.file_field :image, class: 'hidden' %>
+          </label>
+
+
+        <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="post-container">
+      <div class="content-post">
+        <div class="post-date">
+          <%= @tweet.created_at %>
+        </div>
+        <p><%= @tweet.text %></p>
+        <div class="under-menu">
+        <span class="name">
+          <a href="/users/<%= @tweet.user.id %>">
+          <%= @tweet.user.nickname %>
+          </a>
+        </span>
+        <ul class="only-user">
+          <li class="edit">
+              <%= link_to edit_tweet_path(@tweet.id), method: :get do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+          </li>
+          <li class="destroy">
+            <%= link_to tweet_path(@tweet.id), method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gifts">
+      <h4>＜おくりもの＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </p>
+          <%# <%= image_tag comment.image.variant(resize:'500x500'), class: 'gift-image' if comment.image.attached? %> 
+        <% end %>
+      <% end %>
+    </div>
+
+    
+  </div>
+
+</div>
+
+    

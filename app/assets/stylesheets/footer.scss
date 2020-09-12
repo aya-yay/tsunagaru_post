@@ -1,0 +1,18 @@
+.footer-container {
+  height: 150px;
+  width: 100%;
+  background: pink;
+  // position: absolute;
+  // bottom: 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}
+
+.menu-list-container ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 180px;
+  font-size: 25px;
+}

@@ -15,3 +15,15 @@ Rails.application.config.assets.precompile += %w(
   header.css )
 Rails.application.config.assets.precompile += %w( 
   footer.css )
+Rails.application.config.assets.precompile += %w( 
+  login.css )
+Rails.application.config.assets.precompile += %w( 
+  registration.css )
+Rails.application.config.assets.precompile += %w( 
+  comment_index.css )
+Rails.application.config.assets.precompile += %w( 
+  show.css )
+Rails.application.config.assets.precompile += %w( 
+  edit.css )
+Rails.application.config.assets.precompile += %w( 
+  index.css )

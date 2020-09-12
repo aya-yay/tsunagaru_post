@@ -1,0 +1,21 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'edit' %>
+<% end %>
+
+
+<div class="koes-container">
+  <div class="donokoe-container">
+    <p class="donokoe">言いなおす？</p>
+    <div class="koe-form">
+
+      <%= form_with(model: @tweet, id: "form", local: true) do |form| %>
+        <div class="koe-form1">
+          <%= form.text_area :text, id: "content", class: "koe-form01", rows: "10", cols: "16", maxlength: "100" %>
+        </div>
+        <div class="koe-form2">
+          <%= form.submit '言いなおす' , id: "submit" %>
+        </div>
+      <% end %> 
+    </div>
+  </div>
+</div>
