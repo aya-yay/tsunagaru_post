@@ -62,7 +62,7 @@
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.text %>
           </p>
-          <%# <%= image_tag comment.image.variant(resize:'500x500'), class: 'gift-image' if comment.image.attached? %> 
+          <%= image_tag comment.image.variant(resize:'500x500'), class: 'gift-image' if comment.image.attached? %>
         <% end %>
       <% end %>
     </div>
