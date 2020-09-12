@@ -1,0 +1,70 @@
+input:focus, 
+textarea:focus {
+  outline: none;
+}
+
+
+input[type="submit"]{
+  cursor: pointer;
+}
+
+::selection {
+  background: #ed327b;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #ed327b;
+  color: #fff;
+}
+
+* {
+  font-size:100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'いろはマル', 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+
+body {
+  background:#63b47a;
+}
+
+
+form {
+  background:#fff;
+  border-radius:6px;
+  padding:20px;
+  padding-top:30px;
+  width:300px;
+  margin:50px auto;
+  box-shadow:15px 15px 0px rgba(0,0,0,.1);
+}
+
+input {
+  width:100%;
+  background:#f5f5f5;
+  border:0;
+  padding:20px;
+  border-radius:6px;
+  margin-bottom:10px;
+  border:1px solid #eee;
+}
+
+.btn {
+  position:relative;
+  width:100%;
+  padding:20px;
+  border-radius:6px;
+  border:0;
+  background:#f26964;
+  font-size:1.2em;
+  color:#fff;
+  text-shadow:1px 1px 0px rgba(0,0,0,.1);
+  box-shadow:0px 3px 0px #c1524e;
+}
+
+.btn:active {
+  top:3px;
+  box-shadow:none;
+}
