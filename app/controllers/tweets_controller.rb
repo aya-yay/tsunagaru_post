@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
 
 
   def create
-  # binding.pry
+  binding.pry
     @tweet = Tweet.new(tweet_params)
     @tweet.valid?
     @tweet.save
