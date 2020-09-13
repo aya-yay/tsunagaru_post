@@ -14,7 +14,7 @@
         </div>
 
         <div class="koe-form2">
-          <%= form.submit 'つぶやく' , id: "submit" %>
+          <%= form.submit 'つぶやく？' , id: "submit", class: 'tsubuyaku' %>
         </div>
       <% end %>  
       <div id="list"></div>
@@ -43,16 +43,16 @@
 
             <ul class="only-user">
               <li>
-                <%= link_to '声をきく', tweet_path(tweet.id), method: :get %>
+                <%= link_to '声をきく', tweet_path(tweet.id), method: :get, class: "hover-btn" %>
               </li>
               <li>
                 <%= link_to edit_tweet_path(tweet.id), method: :get do %>
-                  <i class="far fa-edit"></i>
+                  <i class="far fa-edit hover-btn"></i>
                 <% end %>
               </li>
               <li>
                 <%= link_to tweet_path(tweet.id), method: :delete do %>
-                  <i class="fas fa-trash-alt"></i>
+                  <i class="fas fa-trash-alt hover-btn"></i>
                 <% end %>
               </li>
             </ul>

@@ -10,14 +10,19 @@
         <% if current_user %>
           <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
           <%= form.text_area :text, placeholder: "ことばをかける？", rows: "10", class: "kotobawokakeru"%>
-          <%= form.submit "おくる", class:"okuru" %> 
+          
           <br>
           <br>
 
           <label class="form-image">
-            <span class="image-file"><i class="far fa-image picture"></i></span>
+            <span class="image-file"><i class="far fa-image picture"></i></span><span class="send-image">画像をおくる？</span>
               <%= form.file_field :image, class: 'hidden' %>
           </label>
+          
+          <br>
+          <br>
+
+          <%= form.submit "おくる", class:"okuru" %> 
 
 
         <% end %>
@@ -54,17 +59,60 @@
       </div>
     </div>
 
-    <div class="gifts">
-      <h4>＜おくりもの＞</h4>
-      <% if @comments %>
-        <% @comments.each do |comment| %>
-          <p>
-            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-            <%= comment.text %>
-          </p>
-          <%= image_tag comment.image.variant(resize:'500x500'), class: 'gift-image' if comment.image.attached? %>
-        <% end %>
-      <% end %>
+    <div class="gifts-container">
+      <div class="gifts">
+        <h3>＜おくりもの＞</h3>
+        <div class="gift">
+          <% if @comments %>
+            <% @comments.each do |comment| %>
+              <p>
+                <p class="comment-date"><%= comment.created_at %></p>
+                <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}", class: "user-nickname" %></strong>
+                <p><%= comment.text %></p>
+              </p>
+              <%= image_tag comment.image.variant(resize:'500x500'), class: 'gift-image' if comment.image.attached? %>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            <% end %>
+          <% end %>
+        </div>
+        <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+      </div>
+      
     </div>
 
     
@@ -72,4 +120,3 @@
 
 </div>
 
-    

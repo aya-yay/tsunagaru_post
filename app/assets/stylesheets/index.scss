@@ -1,4 +1,4 @@
-// Place all the styles related to the tweets controller here.
+// Place all the styles related to the gifts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6, p, div {
 
 body {
   font-family: 'いろはマル', 'Hiragino Kaku Gothic ProN W3', sans-serif;
-  background: #F5F5F5;
+
 }
 
 li {
@@ -21,18 +21,27 @@ li {
 
 a {
   text-decoration: none;
+  color: white;
+  opacity: 0.7;
 }
 
-// -----index--------------
+
+
+// -----------------
 
 .koes-container {
   padding-top: 100px;
   text-align: center;
   overflow: scroll; 
+
+  background: url('/img/umi24.jpg');
+  background-size: 100%;
+  height: 100vh;
 }
 
 .donokoe {
   font-size: 25px;
+  color: #555;
   margin-bottom: 20px;
 }
 
@@ -43,36 +52,56 @@ a {
 }
 
 .koe-form01 {
-  // height: 100px;
-  // width: 400px;
   border-radius: 5px;
-  border: 1px solid gray;
+  border: 1px solid #f5f5f5;
   outline: none;
   margin-bottom: 10px;
+  opacity: 0.9;
+  background    : rgba(255, 255, 255, 0.3);
 }
 
 .koe-form2 {
   margin-bottom: 50px;
 }
 
+.tsubuyaku {
+  border-radius : 5px;
+  font-size     : 10pt;
+  text-align    : center;
+  cursor        : pointer;
+  background    : rgba(255, 255, 255, 0.3);
+  color         : rgba(51, 51, 51, 0.5);
+  box-shadow    : 6px 6px 6px rgba(51, 51, 51, 0.5);; 
+  border        : none;
+}
+
 .post{
-  border: 1px solid;
   width: 400px;
   margin: 0 auto;
   margin-bottom: 50px;
   padding: 20px 30px 8px 30px;
   border-radius: 10px;
+  background    : rgba(255, 255, 255, 0.3);
+  box-shadow    : 6px 6px 6px rgba(51, 51, 51, 0.5);
 }
 
 .post-content {
   padding-bottom: 20px;
 }
 
+.hover-btn:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px,
+  yellow 1px -1px 40px, yellow -1px -1px 40px,
+  yellow 1px 1px 40px, yellow -1px 1px 40px,
+  yellow 1px -1px 40px, yellow -1px -1px 40px;
+}
+
 
 .under-menu {
   display: flex;
   justify-content: space-between;
-  background-color:#f5f5f5;
 }
 
 
@@ -103,37 +132,64 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: gray;
+  background-color: rgba(255, 213, 236, 0.3);
   position: fixed;
   top: 0;
   z-index: 10;
+  
 }
 
 .header-right {
   padding-right: 80px;
+  
 }
 
 .logo {
   padding-left: 30px;
 }
 
+.logo:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
+}
+
 .lists-right {
   display: flex;
   list-style: none;
   align-items: center;
+  
 }
 
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
+  color: white;
+  opacity: 0.7;
+  text-shadow:1px 1px 2px rgba(51, 51, 51, 0.6);
   font-weight: bold;
+  font-size: 25px;
+}
+
+.user-nickname:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
 }
 
 
 .logout {
   text-decoration: none;
   color: #333333;
+  color: white;
+  opacity: 0.7;
+  font-size: 25px;
+}
+
+.logout:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
 }
 
 .login {
@@ -141,11 +197,24 @@ a {
   line-height: 32px;
   margin-right: 3vw;
   color: #333333;
+  font-size: 25px;
+}
+
+.login:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
 }
 
 .sign-up {
   text-decoration: none;
   color: #333333;
+}
+
+.sign-up:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
 }
 
 .logo {
@@ -156,20 +225,19 @@ a {
 // -------footer----------
 
 .footer-container {
-  height: 150px;
+  height:80px;
   width: 100%;
-  background: pink;
-  // position: absolute;
-  // bottom: 0;
+  background-color: rgba(255, 213, 236, 0.3);
   position: fixed;
   bottom: 0;
   z-index: 10;
+  color: rgba(255, 213, 236, 0.3);
 }
 
 .menu-list-container ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 180px;
+  padding: 30px 180px;
   font-size: 25px;
 }
