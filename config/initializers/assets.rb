@@ -27,3 +27,5 @@ Rails.application.config.assets.precompile += %w(
   edit.css )
 Rails.application.config.assets.precompile += %w( 
   index.css )
+Rails.application.config.assets.precompile += %w( 
+  audios.css )
