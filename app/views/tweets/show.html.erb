@@ -9,7 +9,7 @@
       <div class="gift-container">
         <% if current_user %>
           <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
-          <%= form.text_area :text, placeholder: "ことばをかける？", rows: "10", class: "kotobawokakeru"%>
+          <%= form.text_area :text, placeholder: "ことばをおくる？", rows: "10", class: "kotobawokakeru"%>
           
           <br>
           <br>
@@ -21,8 +21,18 @@
           
           <br>
           <br>
+          <br>
 
-          <%= form.submit "おくる", class:"okuru" %> 
+          <label class="form-image">
+            <span class="audio-file"><i class="fas fa-file-audio audio"></i></span><span class="send-audio">お話をおくる？</span>
+              <%= form.file_field :audio_file, class: 'hidden' %>
+          </label>
+
+          <br>
+          <br>
+          <br>
+
+          <div class="okuru"><%= form.submit "おくる", class:"okuru" %></div> 
 
 
         <% end %>
