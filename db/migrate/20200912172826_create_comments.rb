@@ -4,6 +4,7 @@ class CreateComments < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :tweet_id
       t.text :text
+      t.string :audio_file
       t.timestamps
     end
   end
