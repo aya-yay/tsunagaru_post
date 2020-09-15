@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6, p, div {
 body {
   font-family: 'いろはマル', 'Hiragino Kaku Gothic ProN W3', sans-serif;
   background: #F5F5F5;
+ 
 }
 
 li {
@@ -26,74 +27,95 @@ a {
   text-shadow:1px 1px 2px rgba(51, 51, 51, 0.6);
 }
 
-// --------------------------------
 
-.koes-container {
-  padding-top: 100px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ---audio--------------------------
+
+.audio-container {
+  background-color: yellow;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 200px;
   text-align: center;
-  // background-color:rgba(255,255,255,0.4);
-  // background-blend-mode:lighten;
-  background: url('/img/sakura_Fotor.jpg');
+
+  background: url('/img/umi18.jpg');
   background-size: cover;
   height: 100vh;
 }
 
-
-.donokoe {
-  font-size: 25px;
-  margin-bottom: 20px;
-  color: white;
-  opacity: 0.7;
-}
-
-.koe-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.koe-form01 {
-  border-radius: 5px;
-  border: 1px solid #f5f5f5;
-  outline: none;
-  margin-bottom: 10px;
-  opacity: 0.9;
-  background    : rgba(255, 255, 255, 0.3);
-}
-
-.koe-form02 {
-  border-radius : 5px;
-  font-size     : 10pt;
-  text-align    : center;
-  cursor        : pointer;
-  background    : rgba(255, 255, 255, 0.3);
-  color         : rgba(255, 255, 255, 0.7);
-  box-shadow    : 6px 6px 6px rgba(51, 51, 51, 1);; 
-  border        : none;
-  padding: 2px 6px;
-}
-
-
-
-
-
-
-
-
-.post{
-  border: 1px solid;
-  width: 400px;
+.controller {
+  // background-color: pink;
+  height: 200px;
+  width: 450px;
   margin: 0 auto;
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.post-date {
-  color: gray;
+.start {
+  padding: 5px;
+  height: 100px;
+  width: 160px;
+  border-radius: 10px;
+  font-size: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.koe-form2 {
-  margin-bottom: 50px;
+.stop {
+  padding: 5px;
+  height: 100px;
+  width: 160px;
+  border-radius: 10px;
+  font-size: 25px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
+
+.downloaded {
+  margin: 0 auto;
+  height: 200px;
+  width: 450px;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #eee;
+  background    : rgba(255, 255, 255, 0.2);
+  box-shadow:2px 3px 10px rgba(51, 51, 51, 0.6);
+}
+
+.downloaded p {
+  font-size: 23px;
+  margin-bottom: 20px;
+  color: rgba(51, 51, 51, 0.8);
+}
+
+.downloaded a {
+  margin: 0 auto;
+  font-size: 23px;
+  margin-bottom: 10px;
+  display: block;
+  border: 1px solid #eee;
+  width: 200px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow:2px 3px 10px rgba(51, 51, 51, 0.6);
+  color: rgba(51, 51, 51, 0.6);
+  text-shadow:1px 1px 2px rgba(51, 51, 51, 0.3); 
+}
+
+
+
+
 
 // ----header--------
 
