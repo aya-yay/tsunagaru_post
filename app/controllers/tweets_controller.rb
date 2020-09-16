@@ -9,7 +9,6 @@ class TweetsController < ApplicationController
 
 
   def create
-  binding.pry
     @tweet = Tweet.new(tweet_params)
     @tweet.valid?
     @tweet.save
@@ -26,7 +25,6 @@ class TweetsController < ApplicationController
   end
 
   def update
-    # binding.pry
     tweet = Tweet.find(params[:id])
     tweet.update(tweet_params)
     redirect_to tweets_path
@@ -36,6 +34,7 @@ class TweetsController < ApplicationController
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
   end
+
 
   private
 

@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 2020_09_12_175354) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tweet_id"
-    t.text "text", null: false
-    t.string "audio_file", default: "", null: false
+    t.text "text"
+    t.string "audio_file"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

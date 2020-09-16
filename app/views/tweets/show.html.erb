@@ -83,6 +83,9 @@
               <%= image_tag comment.image.variant(resize:'500x500'), class: 'gift-image' if comment.image.attached? %>
               <br>
               <br>
+              <% if comment.audio_file %>
+              <%= audio_tag comment.audio_file, controls: true %>
+              <% end %>
               <br>
               <br>
               <br>

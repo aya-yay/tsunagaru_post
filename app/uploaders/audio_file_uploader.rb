@@ -13,7 +13,7 @@ class AudioFileUploader < CarrierWave::Uploader::Base
       "#{super.chomp(File.extname(super))}.mp3"
     end
   end
-end
+
 
   # Choose what kind of storage to use for this uploader:
   storage :file
