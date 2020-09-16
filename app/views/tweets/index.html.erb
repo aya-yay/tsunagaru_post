@@ -8,16 +8,23 @@
   <div class="donokoe-container">
 
     <div class="koe-form">
-      <%= form_with(model: @tweet, id: "form", local: true) do |form| %>
+      <%= form_with model: @tweet, url: tweets_path, class:'form-wrap', local: true do |form| %>
         <div class="koe-form1">
-          <%= form.text_area :text, id: "content", class: "koe-form01", rows: "10", cols: "16", maxlength: "100" %>
+          <%= form.text_area :text, id: "content", class: "input-message", rows: "10", cols: "16", maxlength: "100" %>
         </div>
 
-        <div class="koe-form2">
-          <%= form.submit 'つぶやく？' , id: "submit", class: 'tsubuyaku' %>
+        <div class="tag-field", id='tag-field'>
+          <%= form.text_field :name, class:"input-tag", placeholder:"タグをつけてね" %>
+        </div>
+
+        <div id="search-result">
+        </div>
+
+        <div class="submit-post">
+          <%= form.submit "つぶやく？", class: "submit-btn" %>
         </div>
       <% end %>  
-      <div id="list"></div>
+      <%# <div id="list"></div> %>
     </div>
   </div>
   
@@ -35,6 +42,14 @@
           <div class="post-content">
             <%= simple_format(tweet.text) %>
           </div>
+
+          <ul class="tag">
+            <li class="tag-list">
+              <%tweet.tags.each do |tag| %>
+                #<%=tag.name%>
+              <%end%>
+            </li>
+          </ul>
 
           <% if user_signed_in? && current_user.id == tweet.user_id %>
 
@@ -61,6 +76,8 @@
                   <% end %>
                 </li>
               </ul>
+
+              
 
             </div>
           <% end %>
