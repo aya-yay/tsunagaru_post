@@ -6,7 +6,7 @@
 <div class="koes-container">
 
   <div class="donokoe-container">
-    <p class="donokoe">どの声がきこえる？</p>
+
     <div class="koe-form">
       <%= form_with(model: @tweet, id: "form", local: true) do |form| %>
         <div class="koe-form1">
@@ -19,82 +19,86 @@
       <% end %>  
       <div id="list"></div>
     </div>
-      <%# --------投稿された声↓↓-------- %>
-    <% @tweets.each do |tweet| %>
-      <div class="post">
-
-        <div class="post-date">
-          <%= tweet.created_at %>
-        </div>
-
-        <div class="post-content">
-          <%= tweet.text %>
-        </div>
-
-        <% if user_signed_in? && current_user.id == tweet.user_id %>
-
-          <div class="under-menu">
-
-            <span>
-              <a class="username" href="/users/<%= tweet.user.id %>">
-                <%= tweet.user.nickname %>
-              </a>
-            </span>
-
-            <ul class="only-user">
-              <li>
-                <%= link_to '声をきく', tweet_path(tweet.id), method: :get, class: "hover-btn" %>
-              </li>
-              <li>
-                <%= link_to edit_tweet_path(tweet.id), method: :get do %>
-                  <i class="far fa-edit hover-btn"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to tweet_path(tweet.id), method: :delete do %>
-                  <i class="fas fa-trash-alt hover-btn"></i>
-                <% end %>
-              </li>
-            </ul>
-
-          </div>
-        <% end %>
-        
-      </div>
-    <% end %>
-
   </div>
+  
+    <%# --------投稿された声↓↓-------- %>
+  
+    <div class="many_koes">
+      <p class="donokoe">どの声がきこえる？</p>
+      <% @tweets.each do |tweet| %>
+        <div class="post">
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+          <div class="post-date">
+            <%= tweet.created_at %>
+          </div>
 
+          <div class="post-content">
+            <%= simple_format(tweet.text) %>
+          </div>
+
+          <% if user_signed_in? && current_user.id == tweet.user_id %>
+
+            <div class="under-menu">
+
+              <span>
+                <a class="user-name" href="/users/<%= tweet.user.id %>">
+                  <%= tweet.user.nickname %>
+                </a>
+              </span>
+
+              <ul class="only-user">
+                <li>
+                  <%= link_to '声をきく', tweet_path(tweet.id), method: :get, class: "hover-btn" %>
+                </li>
+                <li>
+                  <%= link_to edit_tweet_path(tweet.id), method: :get do %>
+                    <i class="far fa-edit hover-btn"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to tweet_path(tweet.id), method: :delete do %>
+                    <i class="fas fa-trash-alt hover-btn"></i>
+                  <% end %>
+                </li>
+              </ul>
+
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  
 </div>

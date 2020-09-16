@@ -42,8 +42,8 @@ a {
 }
 
 .post-container {
-  width: calc(100vw - 300px);
-  padding-top: 150px;
+  width: calc(100vw - 450px);
+  padding-top: 120px;
   overflow: scroll;
 }
 
@@ -54,7 +54,7 @@ a {
   height: 230px;
   margin: 0 auto;
   text-align: center;
-  padding: 40px 40px 0px 40px;
+  padding: 20px 40px 0px 40px;
   border-radius: 15px;
   position: relative;
   margin-bottom: 60px;
@@ -62,7 +62,7 @@ a {
 
 
 .post-date {
-  font-size: 11px;
+  font-size: 18px;
   text-align: left;
   color: gray;
   margin-bottom: 20px;
@@ -70,16 +70,18 @@ a {
 
 .content-post p {
   margin-bottom: 20px;
+  font-size: 25px;
   // background-color:#f5f5f5;
 }
+
 
 .under-menu {
   display: flex;
   justify-content: space-between;
-  // background-color:#f5f5f5;
   position: absolute;
   bottom: 10px;
   right: 20px;
+  font-size: 25px;
 }
 
 .only-user {
@@ -96,14 +98,15 @@ a {
 
 .gift-container {
   // background-color: white;
-  width: 300px;
-  height: 100vh;
-  margin: 110px auto;
-  padding: 40px 40px 0px 40px;
+  width: 450px;
+  height: 100%;
+  margin: 0px auto;
+  padding: 120px 40px 0px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .kotobawokakeru {
@@ -113,6 +116,8 @@ a {
   background    : rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(51,51,51,0.3);
   outline: none;
+  font-size: 20px;
+  padding: 5px;
 }
 
 .okuru {
@@ -122,6 +127,8 @@ a {
   margin: 0 auto;
   border-radius: 4px;
   box-shadow: 1px 1px 4px rgba(51, 51, 51, 0.2);
+  font-size: 20px;
+  cursor: pointer;
 }
 
 // -----gift------------------------------
@@ -152,8 +159,9 @@ a {
 }
 
 .picture {
-  font-size: 4em;
-  color: #777777	
+  font-size: 6em;
+  color: #777777;
+  cursor: pointer;
 }
 
 .send-image {
@@ -162,8 +170,9 @@ a {
 }
 
 .audio {
-  font-size: 3.8em;
-  color: #777777
+  font-size: 5.5em;
+  color: #777777;
+  cursor: pointer;
 }
 
 .send-audio {
