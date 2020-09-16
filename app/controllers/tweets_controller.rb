@@ -5,14 +5,22 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
     @tweet = Tweet.new
+    @tweet = TweetsTag.new
+  end
+
+  def new
+    @tweet = TweetsTag.new
   end
 
 
   def create
-    @tweet = Tweet.new(tweet_params)
-    @tweet.valid?
-    @tweet.save
-    redirect_to action: :index
+    @tweet = TweetsTag.new(tweet_params)
+    if @tweet.valid?
+      @tweet.save
+      redirect_to action: :index
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -35,11 +43,17 @@ class TweetsController < ApplicationController
     @comments = @tweet.comments.includes(:user)
   end
 
+  def search
+    return nil if params[:input] == ""
+    tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
+    render json:{ keyword: tag }
+  end
+
 
   private
 
   def tweet_params
-    params.require(:tweet).permit(:text).merge(user_id: current_user.id)
+    params.require(:tweets_tag).permit(:text, :name).merge(user_id: current_user.id)
   end
 
   def set_method

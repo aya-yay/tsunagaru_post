@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :audios, only: [:index, :create]
   resources :tweets do
+    collection do
+      get 'search'
+    end
     resources :comments, only: [:index, :create]
   end
 
