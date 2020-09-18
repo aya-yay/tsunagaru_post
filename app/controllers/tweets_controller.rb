@@ -40,13 +40,17 @@ class TweetsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @tweet.comments.includes(:user)
+    @comments = @tweet.comments.includes(:user).order("created_at DESC")
   end
 
   def search
     return nil if params[:input] == ""
     tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
     render json:{ keyword: tag }
+  end
+
+  def tweet_search
+    @tweets = Tweet.search(params[:keyword])
   end
 
 

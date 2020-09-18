@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :tweets do
     collection do
       get 'search'
+      get 'tweet_search'
     end
     resources :comments, only: [:index, :create]
   end
