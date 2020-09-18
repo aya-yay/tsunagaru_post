@@ -15,14 +15,8 @@ body {
 
 }
 
-li {
-  list-style: none;
-}
-
 a {
   text-decoration: none;
-  color: white;
-  opacity: 0.7;
 }
 
 
@@ -34,8 +28,8 @@ a {
   text-align: center;
   position: relative;
   background: url('/img/momiji_Fotor.jpg');
-  background-size: 100%;
-  height: calc(100vh - 150px - 65px);
+  background-size: 100% auto;
+
 }
 
 .donokoe {
@@ -58,96 +52,12 @@ a {
 
 // // ----header--------
 
-.header-container {
-//   height: 65px;
-//   min-width: 100vw;
-//   margin: 0 auto;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   position: fixed;
-//   top: 0;
-//   z-index: 10;
-  background-color: black;
-}
-
-// .header-right {
-//   padding-right: 80px;
-  
-// }
-
-// .logo {
-//   padding-left: 30px;
-  
-// }
-
-// .lists-right {
-//   display: flex;
-//   list-style: none;
-//   align-items: center;
-  
-// }
-
-.user-nickname {
-//   text-decoration: none;
-//   margin-right: 3vw;
-//   color: #333333;
-//   font-weight: bold;
-//   color: white;
-//   opacity: 0.7;
-color: black;
-}
-
-
-.logout {
-//   text-decoration: none;
-//   color: #333333;
-//   color: white;
-//   opacity: 0.7;
-color: black;
-}
-
-.login {
-//   text-decoration: none;
-//   line-height: 32px;
-//   margin-right: 3vw;
-  color: black;
-}
-
-// .sign-up {
-//   text-decoration: none;
-//   color: #333333;
-// }
-
-.logo {
-//   font-size: 28px;
-//   font-weight: bold;
-color: black;
+header{
+  display: none;
 }
 
 // // -------footer----------
 
 .footer-container {
-//   height: 150px;
-//   width: 100%;
-//   background-color: rgba(255, 213, 236, 0.2);
-//   position: fixed;
-//   bottom: 0;
-//   z-index: 10;
-//   color: rgba(255, 213, 236, 0.2);
-background: black;
-color: black;
-}
-
-// .menu-list-container ul {
-// //   display: flex;
-// //   justify-content: space-between;
-// //   align-items: center;
-// //   padding: 60px 180px;
-// //   font-size: 25px;
-// color: black;
-// }
-
-.menu-list-container a {
-  color: black;
+  display: none;
 }
