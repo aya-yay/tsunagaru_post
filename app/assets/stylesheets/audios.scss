@@ -37,19 +37,15 @@ a {
 // ---audio--------------------------
 
 .audio-container {
-  background-color: yellow;
   height: 100vh;
   margin: 0 auto;
   padding-top: 200px;
   text-align: center;
-
   background: url('/img/umi18.jpg');
-  background-size: cover;
-  height: 100vh;
+  background-size: 100% auto;
 }
 
 .controller {
-  // background-color: pink;
   height: 200px;
   width: 450px;
   margin: 0 auto;
@@ -127,7 +123,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 213, 236, 0.3);
+  background-color: rgba(102, 204, 255, 0.2);
   position: fixed;
   top: 0;
   z-index: 10;
@@ -230,7 +226,7 @@ a {
 
 .menu-list-container ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 30px 180px;
   font-size: 25px;

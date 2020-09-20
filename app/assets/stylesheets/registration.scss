@@ -1,3 +1,54 @@
+// Place all the styles related to the gifts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* CSSのリセット（消さない） */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'いろはマル', 'Hiragino Kaku Gothic ProN W3', sans-serif;
+  background: #F5F5F5;
+ 
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  text-shadow:1px 1px 2px rgba(51, 51, 51, 0.6);
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ---------------------------
+
+.registration-container {
+  height: 100vh;
+  padding-top: 120px;
+  background: url('/img/umi12.jpg');
+  background-size: cover;
+}
+
+.name_password {
+  text-align: center;
+  color: #F5F5F5;
+  font-size: 20px;
+}
+
 input:focus, 
 textarea:focus {
   outline: none;
@@ -18,53 +69,161 @@ input[type="submit"]{
   color: #fff;
 }
 
-* {
-  font-size:100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'いろはマル', 'Hiragino Kaku Gothic ProN W3', sans-serif;
-}
-
-body {
-  background:#63b47a;
-}
-
 
 form {
-  background:#fff;
+  background:rgba(255, 255, 255, 0.4);
   border-radius:6px;
   padding:20px;
   padding-top:30px;
   width:300px;
   margin:50px auto;
-  box-shadow:15px 15px 0px rgba(0,0,0,.1);
+  box-shadow:15px 15px 0px rgba(0,0,0,.3);
+  text-align: center;
 }
 
 input {
   width:100%;
-  background:#f5f5f5;
+  background:rgba(255, 255, 255, 0.6);
   border:0;
   padding:20px;
   border-radius:6px;
   margin-bottom:10px;
   border:1px solid #eee;
+  text-align: center;
 }
 
 .btn {
   position:relative;
-  width:100%;
-  padding:20px;
+  margin-top: 15px;
+  width:60%;
+  padding:5px;
   border-radius:6px;
   border:0;
-  background:#f26964;
-  font-size:1.2em;
-  color:#fff;
-  text-shadow:1px 1px 0px rgba(0,0,0,.1);
-  box-shadow:0px 3px 0px #c1524e;
+  cursor: pointer;
+  box-shadow: 4px 7px rgba(0,0,0,.3);
 }
 
 .btn:active {
-  top:3px;
   box-shadow:none;
+  position: relative;
+  top: 7px;
+}
+
+
+// ----header--------
+
+.header-container {
+  height: 65px;
+  min-width: 100vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(102, 204, 255, 0.2);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  
+}
+
+.header-right {
+  padding-right: 80px;
+  
+}
+
+.logo {
+  padding-left: 30px;
+}
+
+.logo:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: white;
+  opacity: 0.7;
+  text-shadow:1px 1px 2px rgba(51, 51, 51, 0.6);
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.user-nickname:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+  color: white;
+  opacity: 0.7;
+  font-size: 25px;
+}
+
+.logout:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+  font-size: 21px;
+}
+
+.login:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+  font-size: 20px;
+}
+
+.sign-up:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+// -------footer----------
+
+.footer-container {
+  height:80px;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.5);  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  color: rgba(255, 213, 236, 0.3);
+}
+
+.menu-list-container ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 180px;
+  font-size: 25px;
 }

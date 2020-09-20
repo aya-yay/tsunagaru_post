@@ -13,22 +13,24 @@
           
           <br>
           <br>
+          <div class="image-or-audio">
+            <label class="form-image">
+              <span class="image-file">
+                <i class="far fa-image picture"></i>
+              </span>
+              <span class="send-image">画像をおくる？</span>
+                <%= form.file_field :image, class: 'hidden' %>
+            </label>
 
-          <label class="form-image">
-            <span class="image-file"><i class="far fa-image picture"></i></span><span class="send-image">画像をおくる？</span>
-              <%= form.file_field :image, class: 'hidden' %>
-          </label>
-          
-          <br>
-          <br>
-          <br>
+            <label class="form-audio">
+              <span class="audio-file">
+                <i class="fas fa-file-audio audio"></i>
+              </span>
+              <span class="send-audio">お話をおくる？</span>
+                <%= form.file_field :audio_file, class: 'hidden' %>
+            </label>
 
-          <label class="form-image">
-            <span class="audio-file"><i class="fas fa-file-audio audio"></i></span><span class="send-audio">お話をおくる？</span>
-              <%= form.file_field :audio_file, class: 'hidden' %>
-          </label>
-
-          <br>
+          </div>
           <br>
           <br>
 
@@ -39,6 +41,30 @@
         <% else %>
           <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
         <% end %>
+
+
+
+
+
+
+
+        <div class="show-footer-container">
+        <div class="menu-list-container">
+          <ul class="doors">
+            <li class="door01">
+              <%= link_to "ぽすと", tweets_path %>
+            </li>
+            <li class="door02">
+              <%= link_to "たからばこ", "/users/#{current_user.id}", class: "takarabako" %>
+            </li>
+            <li class="door03">
+              <%= link_to "ろくおん部屋", audios_path %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
       </div>
     </div>
 
@@ -47,25 +73,23 @@
         <div class="post-date">
           <%= @tweet.created_at %>
         </div>
-        <p><%= @tweet.text %></p>
+        <p><%= simple_format(@tweet.text) %></p>
         <div class="under-menu">
-        <span class="name">
-          <a href="/users/<%= @tweet.user.id %>">
-          <%= @tweet.user.nickname %>
-          </a>
-        </span>
-        <ul class="only-user">
-          <li class="edit">
-              <%= link_to edit_tweet_path(@tweet.id), method: :get do %>
-                <i class="far fa-edit"></i>
+        
+        <% if user_signed_in? && current_user.id == @tweet.user.id %>
+          <ul class="only-user">
+            <li class="edit">
+                <%= link_to edit_tweet_path(@tweet.id), method: :get do %>
+                  <i class="far fa-edit"></i>
+                <% end %>
+            </li>
+            <li class="destroy">
+              <%= link_to tweet_path(@tweet.id), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
               <% end %>
-          </li>
-          <li class="destroy">
-            <%= link_to tweet_path(@tweet.id), method: :delete do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        <% end %>
       </div>
     </div>
 

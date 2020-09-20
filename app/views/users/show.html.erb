@@ -1,1 +1,73 @@
-hello
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'users' %>
+<% end %>
+
+<div class="user-show">
+  <p class="takaramono-miru">たからものを見る？</p>
+
+  <% if @tweets %>
+    <% @tweets.each do |tweet| %>
+      <div class="post">
+
+        <div class="post-date">
+          <%= tweet.created_at %>
+        </div>
+
+        <div class="post-content">
+          <%= simple_format(tweet.text) %>
+        </div>
+
+        <ul class="tag">
+          <li class="tag-list">
+            <%tweet.tags.each do |tag| %>
+              #<%=tag.name%>
+            <%end%>
+          </li>
+        </ul>
+
+        <% if user_signed_in? && current_user.id == tweet.user_id %>
+
+          <div class="under-menu">
+
+            <span>
+              <%= link_to '贈りものを見る', tweet_path(tweet.id), method: :get, class: "user-name hover-btn" %> 
+            </span>
+
+
+
+
+
+          <ul class="only-user">
+              <li>
+                <%= link_to edit_tweet_path(tweet.id), method: :get do %>
+                  <i class="far fa-edit hover-btn"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to tweet_path(tweet.id), method: :delete do %>
+                  <i class="fas fa-trash-alt hover-btn"></i>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+  <br>
+  <br>
+  <p class="dot">
+  ・<br>
+  ・<br>
+  ・<br>
+  ・<br>
+  ・<br><br>
+  </p>
+  <p class="non-takaramono">たからものは ないみたい。</p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>

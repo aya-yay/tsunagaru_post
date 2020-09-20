@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: :show
   resources :audios, only: [:index, :create]
   resources :tweets do
     collection do
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:index, :create]
   end
+  resources :users
 
   root to: 'comments#index'
 end

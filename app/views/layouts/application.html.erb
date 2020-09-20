@@ -43,24 +43,26 @@
     </header>
 
     <%= yield %>
-
+    <% if user_signed_in? %>
       <footer>
-      <div class="footer-container">
-        <div class="menu-list-container">
-          <ul class="doors">
-            <li class="door01">
-              <%= link_to "声をきく", tweets_path %>
-            </li>
-            <li class="door02">
-              <a href="#">たからばこ</a>
-            </li>
-            <li class="door03">
-              <%= link_to "ろくおん部屋", audios_path %>
-            </li>
-          </ul>
+        <div class="footer-container">
+          <div class="menu-list-container">
+            <ul class="doors">
+              <li class="door01">
+                <%= link_to "ぽすと", tweets_path %>
+              </li>
+              <li class="door02">
+                <%= link_to "たからばこ", "/users/#{current_user.id}", class: "user-nickname" %>
+              </li>
+              <%# <li class="door03">
+                <%= link_to "ろくおん部屋", audios_path %>
+              <%# </li> %>
+            </ul>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    <% else %>
+    <% end %>
 
 
 

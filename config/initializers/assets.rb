@@ -31,3 +31,5 @@ Rails.application.config.assets.precompile += %w(
   audios.css )
 Rails.application.config.assets.precompile += %w( 
   tweet_search.css )
+Rails.application.config.assets.precompile += %w( 
+  users.css )

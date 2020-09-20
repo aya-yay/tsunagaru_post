@@ -7,14 +7,19 @@
 
   <div class="donokoe-container">
 
+      <%= form_with(url: tweet_search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "声をさがす？", class: "search-input" %>
+      <%= form.submit "さがす", class: "search-btn" %>
+    <% end %>
+
     <div class="koe-form">
       <%= form_with model: @tweet, url: tweets_path, class:'form-wrap', local: true do |form| %>
         <div class="koe-form1">
-          <%= form.text_area :text, id: "content", class: "input-message", rows: "10", cols: "16", maxlength: "100" %>
+          <%= form.text_area :text, id: "content", class: "input-message", rows: "10", cols: "16", maxlength: "200" %>
         </div>
 
         <div class="tag-field", id='tag-field'>
-          <%= form.text_field :name, class:"input-tag", placeholder:"タグをつけてね" %>
+          <%= form.text_field :name, class:"input-tag", placeholder:"タグをつけてね", id: "tweets_tag_name" %>
         </div>
 
         <div id="search-result">
@@ -28,21 +33,35 @@
         <br>
 
       <% end %>  
+
+      <div class="index-footer-container">
+        <div class="menu-list-container">
+          <ul class="doors">
+            <li class="door01">
+              <%= link_to "ぽすと", tweets_path %>
+            </li>
+            <li class="door02">
+              <%= link_to "たからばこ", "/users/#{current_user.id}", class: "takarabako" %>
+            </li>
+            <li class="door03">
+              <%= link_to "ろくおん部屋", audios_path %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      
       
     </div>
-
-    <%= form_with(url: tweet_search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "声をさがす？", class: "search-input" %>
-      <%= form.submit "さがす", class: "search-btn" %>
-    <% end %>
-
-
   </div>
   
     <%# --------投稿された声↓↓-------- %>
   
     <div class="many_koes">
       <p class="donokoe">どの声がきこえる？</p>
+
+
+
       <% @tweets.each do |tweet| %>
         <div class="post">
 
@@ -62,36 +81,29 @@
             </li>
           </ul>
 
-          <% if user_signed_in? && current_user.id == tweet.user_id %>
+         
 
-            <div class="under-menu">
+          <div class="under-menu">
 
-              <span>
-                <a class="user-name" href="/users/<%= tweet.user.id %>">
-                  <%= tweet.user.nickname %>
-                </a>
-              </span>
-
-              <ul class="only-user">
-                <li>
-                  <%= link_to '声をきく', tweet_path(tweet.id), method: :get, class: "hover-btn" %>
-                </li>
-                <li>
-                  <%= link_to edit_tweet_path(tweet.id), method: :get do %>
-                    <i class="far fa-edit hover-btn"></i>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to tweet_path(tweet.id), method: :delete do %>
-                    <i class="fas fa-trash-alt hover-btn"></i>
-                  <% end %>
-                </li>
-              </ul>
-
-              
-
-            </div>
-          <% end %>
+            <span>
+              <%= link_to '耳をすます？', tweet_path(tweet.id), method: :get, class: "user-name hover-btn" %> 
+            </span>
+            
+            <% if user_signed_in? && current_user.id == tweet.user_id %>
+            <ul class="only-user">
+              <li>
+                <%= link_to edit_tweet_path(tweet.id), method: :get do %>
+                  <i class="far fa-edit hover-btn"></i>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to tweet_path(tweet.id), method: :delete do %>
+                  <i class="fas fa-trash-alt hover-btn"></i>
+                <% end %>
+              </li>
+            </ul>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>
@@ -99,34 +111,4 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-  
 </div>

@@ -19,11 +19,11 @@ li {
   list-style: none;
 }
 
+
 a {
   text-decoration: none;
   color: white;
   opacity: 0.7;
-  text-shadow:1px 1px 2px rgba(51, 51, 51, 0.6);
 }
 
 
@@ -33,31 +33,36 @@ a {
   padding: 0;
 }
 
+.non-takaramono {
+  color: black;
+}
+
 .show {
   display: flex;
   width: 100vw;
   background: url('/img/yuki.jpg');
   background-size: cover;
-  // height: calc(100vh - 150px - 65px);
 }
 
 .post-container {
-  width: calc(100vw - 450px);
+  width: 100vw;
+  height: 100%;
   padding-top: 120px;
-  overflow: scroll;
 }
 
 .content-post {
   background    : rgba(255, 255, 255, 0.3);
-  box-shadow    : 6px 6px 6px rgba(51, 51, 51, 0.5);; 
-  width: 500px;
-  height: 230px;
-  margin: 0 auto;
+  box-shadow    : 6px 6px 6px rgba(51, 51, 51, 0.5); 
+  width: 350px;
+  height: 550px;
+  margin: 0 770px;
   text-align: center;
   padding: 20px 40px 0px 40px;
   border-radius: 15px;
   position: relative;
   margin-bottom: 60px;
+  font-size: 20px;
+
 }
 
 
@@ -68,11 +73,11 @@ a {
   margin-bottom: 20px;
 }
 
-.content-post p {
-  margin-bottom: 20px;
-  font-size: 25px;
-  // background-color:#f5f5f5;
-}
+// .content-post p {
+//   margin-bottom: 20px;
+//   font-size: 20px;
+//   // background-color:#f5f5f5;
+// }
 
 
 .under-menu {
@@ -94,14 +99,23 @@ a {
   padding-left: 15px;
 }
 
+.hover-btn:hover {
+  opacity: 1;
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px,
+  yellow 1px -1px 40px, yellow -1px -1px 40px,
+  yellow 1px 1px 40px, yellow -1px 1px 40px,
+  yellow 1px -1px 40px, yellow -1px -1px 40px;
+}
+
 // ----comment-form-------------------------------------
 
 .gift-container {
-  // background-color: white;
+  position: fixed;
   width: 450px;
   height: 100%;
   margin: 0px auto;
-  padding: 120px 40px 0px 40px;
+  padding: 100px 40px 0px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,7 +130,7 @@ a {
   background    : rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(51,51,51,0.3);
   outline: none;
-  font-size: 20px;
+  font-size: 15px;
   padding: 5px;
 }
 
@@ -127,8 +141,18 @@ a {
   margin: 0 auto;
   border-radius: 4px;
   box-shadow: 1px 1px 4px rgba(51, 51, 51, 0.2);
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
+}
+
+.okuru:hover {
+  box-shadow:
+  1px 1px 40px rgba(255, 255, 255, 1),
+  1px 1px 40px rgba(255, 255, 255, 1),
+  1px 1px 40px rgba(255, 255, 255, 1),
+  1px 1px 40px rgba(255, 255, 255, 1),
+  1px 1px 40px rgba(255, 255, 255, 1);
+  border: solid 1px rgba(51, 51, 51, 0.1);
 }
 
 // -----gift------------------------------
@@ -143,7 +167,7 @@ a {
   padding: 20px;
   color: rgba(51,51,51,0.7);
   background: rgba(255, 255, 255, 0.5);
-  margin: 0 auto;
+  margin: 0 680px;
   border-radius: 10px;
   margin-bottom: 30px;
 }
@@ -158,27 +182,97 @@ a {
   font-size:9px;
 }
 
-.picture {
-  font-size: 6em;
+.image-or-audio {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.image-file {
   color: #777777;
   cursor: pointer;
+  display: block;
+  margin-right: 50px;
+  font-size: 4em;
 }
 
 .send-image {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: -10px;
+  border-radius: 5px;
+  background: white;
   color: rgba(51, 51, 51, 0.8);
+  border: 1px solid rgba(255,255,255,0.3);
+  outline: none;
+  font-size: 15px;
   padding-left: 10px;
+
 }
 
-.audio {
-  font-size: 5.5em;
+
+
+
+// .send-image:after {
+//   position: absolute;
+//   width: 100px;
+//   // margin-left: 10px;
+//   border-color: rgba(51, 204, 153, 0);
+//   border-width: 10px;
+//   pointer-events: none;
+//   content: " ";
+// }
+
+
+.image-file:hover + .send-image {
+  display: block;
+}
+
+
+
+.audio-file {
   color: #777777;
   cursor: pointer;
+  display: block;
+  font-size: 3.5em;
 }
 
 .send-audio {
+  display: none;
+  position: absolute;
+  width: 120px;
+  top: 80px;
+  right: -30px;
+  border-radius: 5px;
+  background: white;
   color: rgba(51, 51, 51, 0.8);
+  border: 1px solid rgba(255,255,255,0.3);
+  outline: none;
   padding-left: 10px;
+  font-size: 15px;
 }
+
+// .send-audio:after {
+//   // position: absolute;
+//   // width: 120px;
+//   // top: 50px;
+//   // border-radius: 5px;
+//   // border: solid transparent;
+//   // border-color: rgba(51, 204, 153, 0);
+//   // pointer-events: none;
+//   // content: " ";
+  
+// }
+
+
+.audio-file:hover + .send-audio {
+  display: block;
+}
+
+
+
+
 
 .hidden {
   display: none;
@@ -193,7 +287,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 213, 236, 0.3);
+  background-color: rgba(102, 204, 255, 0.2);
   position: fixed;
   top: 0;
   z-index: 10;
@@ -285,20 +379,52 @@ a {
 
 // -------footer----------
 
-.footer-container {
+footer {
+  display: none;
+}
+
+.show-footer-container {
   height:80px;
-  width: 100%;
-  background-color: rgba(255, 213, 236, 0.3);
+  width: 400px;
   position: fixed;
   bottom: 0;
   z-index: 10;
-  color: rgba(255, 213, 236, 0.3);
+ 
+  text-shadow:
+  white 1px 1px 40px, white -1px 1px 40px,
+  white 1px -1px 40px, white -1px -1px 40px;
+}
+
+
+.show-footer-container:hover {
+  text-shadow:
+yellow 1px 1px 40px, yellow -1px 1px 40px,
+yellow 1px -1px 40px, yellow -1px -1px 40px,
+yellow 1px 1px 40px, yellow -1px 1px 40px,
+yellow 1px -1px 40px, yellow -1px -1px 40px,
+white 1px 1px 40px, white -1px 1px 40px,
+white 1px -1px 40px, white -1px -1px 40px,
+red 1px 1px 40px, red -1px 1px 40px,
+red 1px -1px 40px, red -1px -1px 40px,
+blue 1px 1px 40px,  blue -1px 1px 40px,
+blue 1px -1px 40px,  blue -1px -1px 40px;
+}
+
+.show-footer-container a {
+  color: rgba(51, 51, 51, 0.8); 
 }
 
 .menu-list-container ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 30px 180px;
-  font-size: 25px;
+  padding: 30px ;
+}
+
+.doors a{
+  color: #555;
+}
+
+.doors a:hover{
+  color: #fff;
 }

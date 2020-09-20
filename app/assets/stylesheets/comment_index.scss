@@ -27,7 +27,10 @@ a {
   padding-top: 295px; 
   text-align: center;
   position: relative;
-  background: url('/img/momiji_Fotor.jpg');
+  background-image: url('/img/momiji_Fotor_Fotor.jpg');
+  background-color:rgba(0,0,0,0.6);
+  background-blend-mode:darken;
+
   background-size: 100% auto;
 
 }
