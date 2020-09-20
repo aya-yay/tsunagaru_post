@@ -56,7 +56,7 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweets_tag).permit(:text, :name).merge(user_id: current_user.id)
   end
-  # :tweets_tag
+  
   def set_method
     @tweet = Tweet.find(params[:id])
   end
