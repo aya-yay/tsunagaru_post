@@ -15,11 +15,11 @@
     <div class="koe-form">
       <%= form_with model: @tweet, url: tweets_path, class:'form-wrap', local: true do |form| %>
         <div class="koe-form1">
-          <%= form.text_area :text, id: "content", class: "input-message", rows: "10", cols: "16", maxlength: "200" %>
+          <%= form.text_area :text, id: "content", class: "input-message", rows: "10", cols: "16", maxlength: "117" %>
         </div>
 
         <div class="tag-field", id='tag-field'>
-          <%= form.text_field :name, class:"input-tag", placeholder:"タグをつけてね", id: "tweets_tag_name" %>
+          <%= form.text_field :name, class:"input-tag", placeholder:"タグをつける？", id: "tweets_tag_name" %>
         </div>
 
         <div id="search-result">
@@ -62,53 +62,51 @@
     <div class="many_koes">
       <p class="donokoe">どの声がきこえる？</p>
 
-
-
-      <% @tweets.each do |tweet| %>
-        <div class="post">
-
-          <div class="post-date">
-            <%= tweet.created_at %>
-          </div>
-
-          <div class="post-content">
-            <%= simple_format(tweet.text) %>
-          </div>
-
-          <ul class="tag">
-            <li class="tag-list">
-              <%tweet.tags.each do |tag| %>
-                #<%=tag.name%>
-              <%end%>
-            </li>
-          </ul>
-
-         
-
-          <div class="under-menu">
-
-            <span>
-              <%= link_to '耳をすます？', tweet_path(tweet.id), method: :get, class: "user-name hover-btn" %> 
-            </span>
-            
-            <% if user_signed_in? && current_user.id == tweet.user_id %>
-            <ul class="only-user">
-              <li>
-                <%= link_to edit_tweet_path(tweet.id), method: :get do %>
-                  <i class="far fa-edit hover-btn"></i>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to tweet_path(tweet.id), method: :delete do %>
-                  <i class="fas fa-trash-alt hover-btn"></i>
-                <% end %>
+      <ul class="post-lists">
+        <% @tweets.each do |tweet| %>
+          <li class="post">
+            <div class="post-date">
+              <%= tweet.created_at %>
+            </div>
+            <div class="post-content">
+              <%= simple_format(tweet.text) %>
+            </div>
+            <ul class="tag">
+              <li class="tag-list">
+                <%tweet.tags.each do |tag| %>
+                  #<%=tag.name%>
+                <%end%>
               </li>
             </ul>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+            <div class="under-menu">
+              <span>
+                <%= link_to '耳をすます？', tweet_path(tweet.id), method: :get, class: "listen hover-btn" %> 
+              </span>
+              <% if user_signed_in? && current_user.id == tweet.user_id %>
+              <ul class="only-user">
+                <li>
+                  <%= link_to edit_tweet_path(tweet.id), method: :get do %>
+                    <i class="far fa-edit hover-btn"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to tweet_path(tweet.id), method: :delete do %>
+                    <i class="fas fa-trash-alt hover-btn"></i>
+                  <% end %>
+                </li>
+              </ul>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <br>
       <%= paginate @tweets %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     </div>
 
     <br>

@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
-    @tweets = Kaminari.paginate_array(@tweets).page(params[:page]).per(3)
+    @tweets = Kaminari.paginate_array(@tweets).page(params[:page]).per(12)
     @tweet = Tweet.new
     @tweet = TweetsTag.new
   end

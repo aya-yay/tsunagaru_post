@@ -81,6 +81,9 @@
           <%= @tweet.created_at %>
         </div>
         <p><%= simple_format(@tweet.text) %></p>
+        <div class="tweet-username">
+          <%= @tweet.user.nickname %>
+        </div>
         <div class="under-menu">
         
         <% if user_signed_in? && current_user.id == @tweet.user.id %>
