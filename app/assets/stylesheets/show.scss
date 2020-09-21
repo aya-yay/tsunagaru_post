@@ -155,6 +155,27 @@ a {
   border: solid 1px rgba(51, 51, 51, 0.1);
 }
 
+.for-not-user {
+  margin-top: 100px;
+  text-align: center;
+  color: rgba(51,51,51,0.8);
+}
+
+.for-not-user a {
+  color: rgba(51,51,51,0.8);
+  text-shadow: 1px 1px 4px rgba(51, 51, 51, 0.3);
+}
+
+.for-not-user a:hover {
+  color: rgba(51,51,51,0.9);
+  
+  text-shadow:
+  yellow 1px 1px 40px, yellow -1px 1px 40px,
+  yellow 1px -1px 40px, yellow -1px -1px 40px,
+  yellow 1px 1px 40px, yellow -1px 1px 40px,
+  yellow 1px -1px 40px, yellow -1px -1px 40px;
+}
+
 // -----gift------------------------------
 
 .gifts-container {
@@ -352,7 +373,7 @@ a {
   line-height: 32px;
   margin-right: 3vw;
   color: #333333;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .login:hover {
@@ -362,8 +383,10 @@ a {
 }
 
 .sign-up {
-  text-decoration: none;
   color: #333333;
+  text-decoration: none;
+  font-family: 'いろはマル', 'Hiragino Kaku Gothic ProN W3', sans-serif;
+  font-size: 20px;
 }
 
 .sign-up:hover {

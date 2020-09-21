@@ -1,6 +1,10 @@
 class TweetsController < ApplicationController
   before_action :set_method, only: [:edit, :show]
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
+
+
+  def top
+  end
 
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
@@ -14,10 +18,14 @@ class TweetsController < ApplicationController
 
 
   def create
-    @tweet = TweetsTag.new(tweet_params)
-    @tweet.valid?
-    @tweet.save
-    redirect_to tweets_path
+    if user_signed_in? 
+      @tweet = TweetsTag.new(tweet_params)
+      @tweet.valid?
+      @tweet.save
+      redirect_to tweets_path
+    else
+      redirect_to user_registration_path
+    end
   end
 
   def destroy

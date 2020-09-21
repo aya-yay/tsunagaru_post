@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
   resources :users
 
-  root to: 'comments#index'
+  root to: 'tweets#top'
 end

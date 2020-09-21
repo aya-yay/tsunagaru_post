@@ -40,9 +40,11 @@
             <li class="door01">
               <%= link_to "ぽすと", tweets_path %>
             </li>
+            <% if user_signed_in? %> 
             <li class="door02">
               <%= link_to "たからばこ", "/users/#{current_user.id}", class: "takarabako" %>
             </li>
+            <% end %>
             <li class="door03">
               <%= link_to "ろくおん部屋", audios_path %>
             </li>
