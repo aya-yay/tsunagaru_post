@@ -39,7 +39,12 @@
 
         <% end %>
         <% else %>
-          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <div class="for-not-user">
+          <p>贈りものをする？</p>
+          <p>↓</p>
+          <p>まずは   <%= link_to '新規登録', new_user_registration_path %>   へ
+          </p>
+        </div>
         <% end %>
 
 
@@ -54,8 +59,10 @@
             <li class="door01">
               <%= link_to "ぽすと", tweets_path %>
             </li>
+            <% if user_signed_in? %> 
             <li class="door02">
               <%= link_to "たからばこ", "/users/#{current_user.id}", class: "takarabako" %>
+            <% end %>
             </li>
             <li class="door03">
               <%= link_to "ろくおん部屋", audios_path %>
