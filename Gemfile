@@ -66,6 +66,8 @@ gem 'carrierwave-audio'
 
 gem "aws-sdk-s3", require: false
 
+gem 'kaminari'
+
 
 
 group :production do
