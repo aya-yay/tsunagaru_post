@@ -38,9 +38,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  def index
-  end
-
   protected
 
   # The path used after sign up.
