@@ -6,7 +6,7 @@
 <div class="koes-container">
 
   <div class="donokoe-container">
-
+  <% if current_user %>
       <%= form_with(url: tweet_search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "声をさがす？", class: "search-input" %>
       <%= form.submit "さがす", class: "search-btn" %>
@@ -33,6 +33,14 @@
         <br>
 
       <% end %>  
+    <% else %>
+    <div class="for-not-user">
+      <p>つぶやく？</p>
+      <p>↓</p>
+      <p>まずは   <%= link_to '新規登録', new_user_registration_path %>   へ
+      </p>
+    </div>
+    <% end %>
 
       <div class="index-footer-container">
         <div class="menu-list-container">
@@ -101,7 +109,9 @@
         <% end %>
       </ul>
     <br>
+    <div class="paginate">
       <%= paginate @tweets %>
+    </div>
     <br>
     <br>
     <br>
