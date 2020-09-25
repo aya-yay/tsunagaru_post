@@ -1,98 +1,105 @@
-# Awesome-name
-
-![Badge Status](https://ci-as-a-service)
-
-OverviewOverviewOverview
+# つながるぽすと
 
 ## Description
+***
+”つながるぽすと”は、完全匿名世界。  
+誰かに声を聞いてほしい人と誰かの声に応えたい人が繋がる場所。  
+お互いに深く関わりすぎることがないのに、優しい場所。
 
-DescriptionDescriptionDescription
-DescriptionDescriptionDescription
-DescriptionDescriptionDescription
+***
+## URL
+***
+https://tsunagarupost.herokuapp.com/
+***  
 
-***DEMO:***
+## テスト用アカウント  
+***
+<Basic認証>  
+ID:admin  
+Pass:2222  
 
-![Demo](https://image-url.gif)
+<ログイン>  
+Nickname:shiro  
+Password:shiro111  
+  
+Nickname:kuro  
+Password:kuro111  
+  
 
-## Features
+***
 
-- Awesome function
-- Awesome UI
-- ...
+## 利用方法  
+***
+＜声を聞いてほしい人の使いかた＞  
+①トップページ左側から、フォーム内に呟きを入力。  
+「つぶやく？」で送信。  
+②つぶやきは、トップページ右側に、新しいものから順に一覧として表示される。  
+③投稿者は、自分の投稿を編集（鉛筆マーク）・削除（ゴミ箱マーク）する事ができる。  
+④投稿の「耳を澄ます？」をクリックすると、投稿の詳細画面へ移る。そこでは、＜声に応えたい人＞から届いた贈り物（テキスト・画像・音声）を見る事ができる。  
+⑤ヘッダーの自分の名前、またはトップページ左側の「たからばこ」をクリックすると、これまでの自分の投稿および贈り物を見る事ができる。  
 
-For more information, see `awesome-tool --help`.
 
+＜誰かの声に応えたい人の使いかた＞  
+①トップページ右側の投稿一覧から、気になった投稿の「声をきく？」をクリックする事で、投稿の詳細ページへ移る事ができる。  
+②投稿詳細ページでは、テキスト・画像・音声を送ることができる。  
+③贈り物として音声を届けたい場合には、左下メニューの「ろくおん部屋」から自分の音声を録音することができる。励ましの言葉や、歌、お話、読み聞かせなど。  
+
+
+＜録音部屋の使いかた＞  
+マイクボタンで録音開始。■で停止。「できたもの」クリックで保存。  
+録音部屋では編集作業はできない。言い間違いなども全て含めて、その人らしさとして捉える。  
+***  
+## 目指した課題解決
+***
+①寂しさを抱える人のために。  
+誰かに声を聞いてほしい人と、誰かの声に応えたい人が繋がることができるように。
+
+②SNSでの不安要素として挙げられる「深く関わりすぎること」を避けながら、自分の心の声を聴いてもらったり、誰かのために何かをすることのできる場所を作れるように。  
+***
+## 要件
+***  
+* ユーザー管理機能（新規登録、ログイン、ログアウト）  
+会員のみ、サイトに入ることができる。
+* ユーザーマイページ機能
+
+* つぶやき投稿機能
+* つぶやき一覧機能
+* つぶやき編集機能
+* つぶやき削除機能
+* つぶやき詳細機能
+* つぶやき検索機能
+* つぶやきタグ付け機能
+
+* つぶやき詳細画面における、贈り物機能  
+（文字・画像・音声送信機能）
+* 贈り物に対するコメント機能
+* より浅く声に応えたい人のための、イイネ機能。  
+（お花を贈る）
+
+* 録音機能
+* ページング機能  
+***
+## 実装予定
+***
+
+* タグ検索機能  
+  タグの一覧をクリックすることで、タグに関係するつぶやきが出てくる機能。
+
+* 贈り物に対するコメント機能
+* より浅く声に応えたい人のための、イイネ機能。（お花を贈る）
+***
+## ローカルでの使用法
+***
+% git clone https://github.com/aya-yay/tsunagaru_post.git   
+% bundle install  
+% rails db:create  
+% rails db:migrate  
+% rails s  
+***
 ## Requirement
+***
+ruby 2.6.5  
+Rails 6.0.3.3  
+puma 3.12.6  
+***
 
-- Requirement
-- Requirement
-- Requirement
-
-## Usage
-
-1. Usage
-2. Usage
-3. Usage
-
-## Installation
-
-    $ git clone https://github.com/b4b4r07/awesome-tool
-
-## Anything Else
-
-AnythingAnythingAnything
-AnythingAnythingAnything
-AnythingAnythingAnything
-
-## Author
-
-[@b4b4r07](https://twitter.com/b4b4r07)
-
-## License
-
-[MIT](http://b4b4r07.mit-license.org)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
