@@ -11,11 +11,14 @@
         <div class="koe-form1">
           <%= form.text_area :text, id: "content", class: "koe-form01", rows: "10", cols: "16", maxlength: "100" %>
         </div>
+        <div class="tag-field", id='tag-field'>
+          <%= form.text_field :name, class:"input-tag", placeholder:"タグをかえる？", id: "tweets_tag_name" %>
+        </div>
         <div class="koe-form2">
           <%= form.submit '言いなおす', id: "submit", class: "koe-form02" %>
-          
         </div>
       <% end %> 
     </div>
   </div>
 </div>
+

@@ -4,7 +4,7 @@ class Tweet < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   has_many :tweet_tag_relations, dependent: :destroy
-  has_many :tags, through: :tweet_tag_relations
+  has_many :tags, through: :tweet_tag_relations, dependent: :destroy
 
   def self.search(search)
     if search != ""

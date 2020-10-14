@@ -5,8 +5,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :nickname
   validates_presence_of :nickname
   
-  has_many :tweets
-  has_many :comments
+  has_many :tweets, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   #nicknameを利用してログインするようにオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)
