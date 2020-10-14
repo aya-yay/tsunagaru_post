@@ -19,13 +19,22 @@ class TweetsController < ApplicationController
 
 
   def create
+    @tweet = TweetsTag.new(tweet_params)
+    binding.pry
     if user_signed_in? 
-      @tweet = TweetsTag.new(tweet_params)
-      @tweet.valid?
-      @tweet.save
+     @tweet.save
+     redirect_to tweets_path
+    end
+  end
+
+  def update
+    load_tweet
+
+    @tweet = TweetsTag.new(tweet_params, tweet: @tweet)
+    if @tweet.update
       redirect_to tweets_path
     else
-      redirect_to user_registration_path
+      render 'edit'
     end
   end
 
@@ -36,12 +45,8 @@ class TweetsController < ApplicationController
   end
 
   def edit
-  end
-
-  def update
-    tweet = Tweet.find(params[:id])
-    tweet.update(tweet_params)
-    redirect_to tweets_path
+    load_tweet
+    @tweet = TweetsTag.new(tweet: @tweet)
   end
 
   def show
@@ -63,7 +68,11 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweets_tag).permit(:text, :name).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:text, :name).merge(user_id: current_user.id)
+  end
+
+  def load_tweet
+    @tweet = current_user.tweets.find(params[:id])
   end
   
   def set_method
