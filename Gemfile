@@ -68,8 +68,23 @@ gem "aws-sdk-s3", require: false
 
 gem 'kaminari'
 
+gem 'ransack'
+
 
 
 group :production do
+
   gem 'rails_12factor'
+
+  gem 'mini_magick'
+  gem 'image_processing', '~> 1.2'
+
+  gem 'carrierwave'
+
+  gem 'carrierwave-audio'
+
+  gem "aws-sdk-s3", require: false
+
+  gem 'kaminari'
+  
 end
