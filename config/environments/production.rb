@@ -110,4 +110,9 @@ config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || 
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+DB_PASSWORD = 'sDSrovhKTg20yrb74ZASNh4dbNOvpwgm'
+DATABASE_URL = 'postgres://ayayay:sDSrovhKTg20yrb74ZASNh4dbNOvpwgm@dpg-cj54pts5kgrc738h7oqg-a/tsunagarupostdb'
+RAILS_MASTER_KEY = '122ffd24850d6719fb65f72b9f419d50'
+
+
 end
