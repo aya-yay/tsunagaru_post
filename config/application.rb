@@ -16,5 +16,7 @@ module TsunagaruPost
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.default_locale = :ja
+ # デプロイするサービスのホストを追加する
+    config.hosts << 'tsunagarupost.onrender.com'
   end
 end
