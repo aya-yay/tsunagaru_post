@@ -12,7 +12,7 @@
 ***
 ## URL
 ***
-https://tsunagarupost.herokuapp.com/
+※デプロイ先変更により、準備中
 ***  
 
 ## テスト用アカウント  
