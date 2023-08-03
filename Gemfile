@@ -70,7 +70,7 @@ gem 'kaminari'
 
 gem 'ransack'
 
-
+gem 'net-http'
 
 group :production do
   gem 'rails_12factor'
