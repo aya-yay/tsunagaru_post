@@ -71,3 +71,5 @@ gem 'kaminari'
 gem 'ransack'
 
 gem 'net-http'
+
+gem 'pg'
