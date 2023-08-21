@@ -37,4 +37,4 @@ preload_app!
 
 
 # Allow puma to be restarted by `rails restart` command.
-piugin :tmp_restart
+plugin :tmp_restart
