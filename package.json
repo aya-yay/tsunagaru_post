@@ -22,5 +22,20 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "description": "<img src=\"https://user-images.githubusercontent.com/69228983/94221758-b5abd980-ff26-11ea-9168-d678685dc478.png\" width=\"200px\" height=\"55px;\" />",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

@@ -27,18 +27,15 @@ const config = {
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: 'asset',
+                exclude: /node_modules/,
+                loader: 'babel-loader',
             },
 
             // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/
         ],
-
-	loaders: [
-             {
-                loader: 'babel-loader'
-             }
-         ]
      },
+     devtool: 'source-map',
 };
 
 module.exports = () => {
